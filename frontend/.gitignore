@@ -13,13 +13,13 @@ dist-ssr
 *.local
 
 # Ignore all image files
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.svg
-*.webp
+/public/*.png
+/public/*.jpg
+/public/*.jpeg
+/public/*.gif
+/public/*.bmp
+/public/*.svg
+/public/*.webp
 
 # Editor directories and files
 .vscode/*
