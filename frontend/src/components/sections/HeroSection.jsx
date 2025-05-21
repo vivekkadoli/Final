@@ -34,11 +34,14 @@ const HeroSection = () => {
                 Explore Products <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/contact">
-              <Button variant="outline" size="lg" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-3 text-lg w-full sm:w-auto">
-                Contact Us
-              </Button>
-            </Link>
+<Link to="/contact">
+  <Button
+    size="lg"
+    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg w-full sm:w-auto"
+  >
+    Contact Us
+  </Button>
+</Link>
           </div>
         </motion.div>
 

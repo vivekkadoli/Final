@@ -7,7 +7,7 @@ import "react-phone-input-2/lib/style.css"; // Import the library's CSS
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0 },
 };
 
 const services = [
@@ -16,12 +16,14 @@ const services = [
   "Quality Turmeric Bulb",
   "Custom Private Label Packaging",
   "Efficient Export & Logistics Solutions",
-  "Rigorous Quality Assurance"
+  "Rigorous Quality Assurance",
 ];
 
 const ContactSection = ({ isPage }) => {
-  const whatsappNumber = "917066378525"; 
-  const whatsappMessage = encodeURIComponent("Hello SWAMIKRUPA TRADERS, I'm interested in your products.");
+  const whatsappNumber = "917066378525";
+  const whatsappMessage = encodeURIComponent(
+    "Hello SWAMIKRUPA TRADERS, I'm interested in your products."
+  );
 
   // Dynamically determine the WhatsApp link based on the user's device
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -34,11 +36,13 @@ const ContactSection = ({ isPage }) => {
   const handleContactSubmit = (e) => {
     e.preventDefault();
     // Open the WhatsApp link
-    window.open(whatsappLink, '_blank');
+    window.open(whatsappLink, "_blank");
   };
 
   return (
-    <section className={`py-12 md:py-16 ${isPage ? 'bg-background' : 'bg-secondary'}`}>
+    <section
+      className={`py-12 md:py-16 ${isPage ? "bg-background" : "bg-secondary"}`}
+    >
       <div className="container mx-auto px-4">
         {isPage && (
           <motion.div
@@ -47,9 +51,12 @@ const ContactSection = ({ isPage }) => {
             variants={fadeIn}
             className="text-center mb-12 md:mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Contact Us
+            </h1>
             <p className="text-lg md:text-xl text-secondary-foreground max-w-3xl mx-auto">
-              We're here to help with all your turmeric and herbal product needs. Reach out to us today!
+              We're here to help with all your turmeric and herbal product
+              needs. Reach out to us today!
             </p>
           </motion.div>
         )}
@@ -68,28 +75,56 @@ const ContactSection = ({ isPage }) => {
                 <Phone className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-primary">Phone</h4>
-                  <a href="tel:+917066378525" className="text-secondary-foreground hover:text-primary">+91 7066378525</a>
+                  <a
+                    href="tel:+917066378525"
+                    className="text-secondary-foreground hover:text-primary"
+                  >
+                    +91 7066378525
+                  </a>
                 </div>
               </div>
               <div className="flex items-start">
                 <Mail className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-primary">Email</h4>
-                  <a href="mailto:swamikrupatraders8841@gmail.com" className="text-secondary-foreground hover:text-primary">swamikrupatraders8841@gmail.com</a>
+                  <a
+                    href="mailto:swamikrupatraders8841@gmail.com"
+                    className="text-secondary-foreground hover:text-primary"
+                  >
+                    swamikrupatraders8841@gmail.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-start">
-                <MessageSquare className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
+                <img
+                  src="/whatsapp.png"
+                  alt="WhatsApp"
+                  className="h-6 w-6 mr-3 mt-1 flex-shrink-0"
+                  style={{ display: "inline-block", verticalAlign: "middle" }}
+                />
                 <div>
                   <h4 className="font-semibold text-primary">WhatsApp</h4>
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-secondary-foreground hover:text-primary">Chat with us</a>
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary-foreground hover:text-primary"
+                  >
+                    Chat with us
+                  </a>
                 </div>
               </div>
             </div>
             <div className="mt-8">
-              <h4 className="text-xl font-bold text-primary mb-3">Business Hours</h4>
-              <p className="text-secondary-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-secondary-foreground">Saturday: 10:00 AM - 4:00 PM</p>
+              <h4 className="text-xl font-bold text-primary mb-3">
+                Business Hours
+              </h4>
+              <p className="text-secondary-foreground">
+                Monday - Friday: 9:00 AM - 6:00 PM
+              </p>
+              <p className="text-secondary-foreground">
+                Saturday: 10:00 AM - 4:00 PM
+              </p>
               <p className="text-secondary-foreground">Sunday: Closed</p>
             </div>
           </motion.div>
@@ -103,18 +138,47 @@ const ContactSection = ({ isPage }) => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="lg:col-span-2 bg-card p-6 md:p-8 rounded-lg shadow-lg"
             >
-              <h3 className="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
+              <h3 className="text-2xl font-bold text-primary mb-6">
+                Send Us a Message
+              </h3>
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-primary mb-1">Full Name</label>
-                  <input type="text" name="name" id="name" required className="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm" />
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-primary mb-1"
+                  >
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    className="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-primary mb-1">Email Address</label>
-                  <input type="email" name="email" id="email" required className="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm" />
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-primary mb-1"
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    className="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-primary mb-1">Phone Number (Optional)</label>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-primary mb-1"
+                  >
+                    Phone Number (Optional)
+                  </label>
                   <PhoneInput
                     country={"in"} // Default country
                     value={phone}
@@ -123,11 +187,25 @@ const ContactSection = ({ isPage }) => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-primary mb-1">Message</label>
-                  <textarea name="message" id="message" rows="4" required className="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm"></textarea>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-primary mb-1"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="4"
+                    required
+                    className="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm"
+                  ></textarea>
                 </div>
                 <div>
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3">
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3"
+                  >
                     Send Message & Chat on WhatsApp
                   </Button>
                 </div>
@@ -156,7 +234,14 @@ const ContactSection = ({ isPage }) => {
                   </div>
                   <div className="flex items-center">
                     <MessageSquare className="h-5 w-5 mr-3 flex-shrink-0" />
-                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:underline">Chat on WhatsApp</a>
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      Chat on WhatsApp
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -168,12 +253,16 @@ const ContactSection = ({ isPage }) => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg"
               >
-                <h3 className="text-2xl font-bold text-primary mb-6">Our Services</h3>
+                <h3 className="text-2xl font-bold text-primary mb-6">
+                  Our Services
+                </h3>
                 <div className="space-y-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-accent flex-shrink-0" />
-                      <p className="ml-2 text-secondary-foreground">{service}</p>
+                      <p className="ml-2 text-secondary-foreground">
+                        {service}
+                      </p>
                     </div>
                   ))}
                 </div>

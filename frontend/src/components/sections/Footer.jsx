@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Phone, Mail, MapPin, Linkedin, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = ({ logoUrl }) => {
@@ -17,8 +16,14 @@ const Footer = ({ logoUrl }) => {
     { name: "Turmeric Bulb", path: "/products" },
   ];
 
-  const whatsappNumber = "917066378525"; 
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const whatsappNumber = "917066378525";
+  const whatsappMessage = encodeURIComponent("Hello SWAMIKRUPA TRADERS, I'm interested in your products.");
+
+  // Device-aware WhatsApp link
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const whatsappLink = isMobile
+    ? `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
+    : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
 
   return (
     <footer className="footer text-gray-300 py-12">
@@ -35,10 +40,27 @@ const Footer = ({ logoUrl }) => {
               Leading supplier and exporter of premium Turmeric and Herbal Products from India.
             </p>
             <div className="flex space-x-4">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="text-gray-300 hover:text-accent transition-colors">
-                <MessageSquare className="h-6 w-6" />
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+                className="text-gray-300 hover:text-accent transition-colors"
+              >
+                <img
+                  src="/whatsapp.png"
+                  alt="WhatsApp"
+                  className="h-6 w-6"
+                  style={{ display: "inline-block", verticalAlign: "middle" }}
+                />
               </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-gray-300 hover:text-accent transition-colors">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="text-gray-300 hover:text-accent transition-colors"
+              >
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
@@ -73,12 +95,6 @@ const Footer = ({ logoUrl }) => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
             <div className="space-y-3 text-sm">
-              {/* <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                <p className="ml-2 text-gray-400">
-                  123, Spice Market, Mumbai, India - 400001
-                </p>
-              </div> */}
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-accent flex-shrink-0" />
                 <a href="tel:+917066378525" className="ml-2 text-gray-400 hover:text-white">+91 7066378525</a>
