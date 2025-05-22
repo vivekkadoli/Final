@@ -8,12 +8,14 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import ProductsPage from "@/pages/ProductsPage";
 import ContactPage from "@/pages/ContactPage";
+import ScrollToTop from "@/components/layout/ScrollToTop"; // Add this import
 
 const App = () => {
   const logoUrl = "/80a6dba0e3285c0c2ebfac1c9353f82c-removebg-preview.png";
 
   return (
     <Router>
+      <ScrollToTop/>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Navbar logoUrl={logoUrl} />
         <main className="flex-grow">
