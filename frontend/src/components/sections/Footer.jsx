@@ -84,9 +84,7 @@ const Footer = ({ logoUrl }) => {
             <ul className="space-y-2">
               {productCategories.map((category) => (
                 <li key={category.name}>
-                  <Link to={category.path} className="text-gray-400 hover:text-white hover:underline">
-                    {category.name}
-                  </Link>
+                  <span className="text-gray-400">{category.name}</span>
                 </li>
               ))}
             </ul>
