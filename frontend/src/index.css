@@ -98,3 +98,51 @@
 .footer {
   background-color: #2a1a00; /* Dark Brown, complementing turmeric theme */
 }
+/* Ensure text and placeholder are visible */
+input,
+textarea {
+  color: #333 !important;              /* dark text */
+  background-color: #fff !important;   /* white background */
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888 !important;              /* lighter placeholder text */
+}
+
+.country-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 10px;
+  box-sizing: border-box;
+}
+
+.country-flag {
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.country-name {
+  flex-grow: 1;
+  color: #333;
+  font-size: 14px;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.country-code {
+  flex-shrink: 0;
+  color: #333;
+  font-size: 14px;
+  text-align: right;
+  min-width: 40px;
+}
