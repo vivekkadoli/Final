@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ChevronRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css"; // Import the library's CSS
+import "react-phone-input-2/lib/style.css";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -25,25 +25,31 @@ const ContactSection = ({ isPage }) => {
     "Hello SWAMIKRUPA TRADERS, I'm interested in your products."
   );
 
-  // Dynamically determine the WhatsApp link based on the user's device
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const whatsappLink = isMobile
     ? `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
     : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
 
-  const [phone, setPhone] = useState(""); // State to store the phone number
+  const [phone, setPhone] = useState("");
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
-    // Open the WhatsApp link
     window.open(whatsappLink, "_blank");
   };
 
   return (
     <section
-      className={`py-12 md:py-16 ${isPage ? "bg-background" : "bg-secondary"}`}
+      className={`relative py-12 md:py-16 ${
+        isPage
+          ? "bg-[url('/turmeric-bg.png')] bg-cover bg-center bg-no-repeat bg-fixed text-primary-foreground"
+          : "bg-secondary"
+      }`}
     >
-      <div className="container mx-auto px-4">
+      {isPage && (
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
+      )}
+
+      <div className="relative z-10 container mx-auto px-4">
         {isPage && (
           <motion.div
             initial="hidden"
@@ -51,15 +57,16 @@ const ContactSection = ({ isPage }) => {
             variants={fadeIn}
             className="text-center mb-12 md:mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Contact Us
             </h1>
-            <p className="text-lg md:text-xl text-secondary-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
               We're here to help with all your turmeric and herbal product
               needs. Reach out to us today!
             </p>
           </motion.div>
         )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <motion.div
             initial="hidden"
@@ -143,10 +150,7 @@ const ContactSection = ({ isPage }) => {
               </h3>
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-primary mb-1"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium text-primary mb-1">
                     Full Name
                   </label>
                   <input
@@ -158,10 +162,7 @@ const ContactSection = ({ isPage }) => {
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-primary mb-1"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium text-primary mb-1">
                     Email Address
                   </label>
                   <input
@@ -173,24 +174,18 @@ const ContactSection = ({ isPage }) => {
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-primary mb-1"
-                  >
+                  <label htmlFor="phone" className="block text-sm font-medium text-primary mb-1">
                     Phone Number (Optional)
                   </label>
                   <PhoneInput
-                    country={"in"} // Default country
+                    country={"in"}
                     value={phone}
                     onChange={(value) => setPhone(value)}
                     inputClass="w-full px-4 py-2 border border-input rounded-md focus:ring-primary focus:border-primary shadow-sm"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-primary mb-1"
-                  >
+                  <label htmlFor="message" className="block text-sm font-medium text-primary mb-1">
                     Message
                   </label>
                   <textarea
@@ -202,10 +197,7 @@ const ContactSection = ({ isPage }) => {
                   ></textarea>
                 </div>
                 <div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3"
-                  >
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3">
                     Send Message & Chat on WhatsApp
                   </Button>
                 </div>
@@ -253,16 +245,12 @@ const ContactSection = ({ isPage }) => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg"
               >
-                <h3 className="text-2xl font-bold text-primary mb-6">
-                  Our Services
-                </h3>
+                <h3 className="text-2xl font-bold text-primary mb-6">Our Services</h3>
                 <div className="space-y-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-accent flex-shrink-0" />
-                      <p className="ml-2 text-secondary-foreground">
-                        {service}
-                      </p>
+                      <p className="ml-2 text-secondary-foreground">{service}</p>
                     </div>
                   ))}
                 </div>
