@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, ShieldCheck, Globe } from 'lucide-react';
@@ -12,7 +11,7 @@ const fadeIn = {
 
 const AboutPage = () => {
   return (
-    <div className="container mx-auto px-4 py-12 md:py-20">
+    <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -25,21 +24,25 @@ const AboutPage = () => {
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-12 md:mb-16">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-          <img  class="rounded-lg shadow-xl w-full h-auto object-cover" alt="Team discussing turmeric products" src="https://images.unsplash.com/photo-1697593176326-6a466e4c4157" />
-        </motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-          <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">Our Story</h2>
-          <p className="text-secondary-foreground mb-4 leading-relaxed">
-            SWAMIKRUPA TRADERS was founded with a simple mission: to bring the authentic goodness of Indian turmeric to the global market. We are deeply rooted in the agricultural traditions of India, working closely with local farmers to ensure the highest quality produce.
-          </p>
-          <p className="text-secondary-foreground leading-relaxed">
-            Our commitment to quality, sustainability, and fair trade practices is at the heart of everything we do. We believe in building long-lasting relationships with our clients based on trust and mutual respect.
-          </p>
-        </motion.div>
+      {/* Background section with text */}
+      <div
+        className="relative bg-cover bg-center rounded-lg shadow-xl overflow-hidden mb-12 md:mb-16"
+        style={{ backgroundImage: 'url("/AboutUsBG.png")' }} // ✅ Place image in public/about-bg.jpg
+      >
+        <div className="bg-black/50 p-8 md:p-16 text-white">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Our Story</h2>
+            <p className="mb-4 leading-relaxed">
+              SWAMIKRUPA TRADERS was founded with a simple mission: to bring the authentic goodness of Indian turmeric to the global market. We are deeply rooted in the agricultural traditions of India, working closely with local farmers to ensure the highest quality produce.
+            </p>
+            <p className="leading-relaxed">
+              Our commitment to quality, sustainability, and fair trade practices is at the heart of everything we do. We believe in building long-lasting relationships with our clients based on trust and mutual respect.
+            </p>
+          </motion.div>
+        </div>
       </div>
 
+      {/* Core Values */}
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mb-12 md:mb-16">
         <h2 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-8">Our Core Values</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -66,6 +69,7 @@ const AboutPage = () => {
         </div>
       </motion.div>
       
+      {/* Call to action */}
       <motion.div 
         initial="hidden" 
         whileInView="visible" 

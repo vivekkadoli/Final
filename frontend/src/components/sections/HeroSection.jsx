@@ -24,8 +24,11 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative hero-gradient text-primary-foreground py-20 md:py-32 lg:py-40">
-      <div className="absolute inset-0 bg-black/60"></div>
+    <section
+      className="relative bg-cover bg-center text-primary-foreground py-20 md:py-32 lg:py-40"
+      style={{ backgroundImage: 'url("/HomePageBG.png")' }}
+    >
+      <div className="absolute inset-0 bg-black/50"></div>
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,13 +72,13 @@ const HeroSection = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg text-center shadow-lg hover:bg-white/20 transition-colors duration-300"
+              className="bg-white/80 backdrop-blur-md p-6 rounded-lg text-center shadow-xl transition-transform duration-300 hover:scale-105"
             >
               <div className="flex justify-center mb-3">{stat.icon}</div>
-              <p className="text-2xl md:text-3xl font-bold text-white">
+              <p className="text-2xl md:text-3xl font-bold text-gray-900">
                 {stat.value}
               </p>
-              <p className="text-sm text-gray-300">{stat.label}</p>
+              <p className="text-sm text-gray-700">{stat.label}</p>
             </div>
           ))}
         </motion.div>
