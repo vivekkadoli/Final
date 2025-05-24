@@ -59,7 +59,7 @@ const Footer = ({ logoUrl }) => {
             </a>
           </div>
         </div>
-        <div className="footer-section">
+        <div className="footer-section footer-quick-links">
           <h4>Quick Links</h4>
           <ul className="footer-links">
             {quickLinks.map((link) => (

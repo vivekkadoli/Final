@@ -11,17 +11,23 @@
   width: 100%;
 }
 .footer-content {
-  max-width: 100%; /* Changed from 1200px to 100% */
+  max-width: 1480px; /* Changed from 1200px to 100% */
   padding: 0 20px; /* Added padding to ensure content doesn't touch extreme edges */
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px; /* REDUCED GAP: Changed from 32px to 20px to bring sections closer */
+  gap: 12px; /* REDUCED GAP: Changed from 32px to 20px to bring sections closer */
 }
 .footer-section {
   flex: 1 1 220px;
   min-width: 220px;
+}
+.footer-section-main {
+  padding-left: 20px;
+}
+.footer-quick-links {
+  margin-left: 70px; /* Adjust as needed */
 }
 .footer-section h4 {
   margin-bottom: 16px;
